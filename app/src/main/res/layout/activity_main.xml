@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.mvvmdemo.MainViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <EditText
+            android:id="@+id/et_ip"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="设置数据" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/et_ip"
+            android:layout_toRightOf="@id/et_ip"
+            android:onClick="@{viewModel.search}"
+            android:text="设置" />
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_ip" />
+
+        <ProgressBar
+            android:id="@+id/pb_load"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_search"
+            android:layout_toLeftOf="@id/btn_search"
+            android:layout_toStartOf="@id/btn_search"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>
+
